@@ -1,11 +1,10 @@
 import { BasePage } from "./BasePage"; 
 
 class PortalTransparencia extends BasePage {
-
   elements = {
-    searchInput: () => cy.get("#input-termo"),
-    searchButton: () => cy.get("#btn-termo"),
-    resultsTitle: () => cy.get("h1.fundo-cinza--claro"),
+    searchInput: () => cy.get("#nolivesearchGadget"),
+    searchButton: () => cy.get(".tile-search-site-bt-submit"),
+    resultsTitle: () => cy.get("h1.documentFirstHeading"),
   };
 
   fillSearchInput(term) {
@@ -16,11 +15,11 @@ class PortalTransparencia extends BasePage {
     this.elements.searchButton().click();
   }
 
-  validateSearchResult(term) {
-    this.elements.resultsTitle().should("be.visible");
+  validateSearchResult() {
     this.elements
       .resultsTitle()
-      .should("contain.text", `Resultados da busca por "${term}"`);
+      .should("be.visible")
+      .and("contain.text", "Busca"); 
   }
 }
 

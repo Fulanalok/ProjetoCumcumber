@@ -17,7 +17,7 @@ async function setupNodeEvents(on, config) {
 
 module.exports = defineConfig({
   e2e: {
-    baseUrl: "https://portaldatransparencia.gov.br",
+    baseUrl: "https://transparencia.pb.gov.br/",
     specPattern: "cypress/e2e/features/*.feature",
     setupNodeEvents,
   },
